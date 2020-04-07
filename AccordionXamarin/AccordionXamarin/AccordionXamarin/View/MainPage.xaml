@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AccordionXamarin"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Accordion;assembly=Syncfusion.Expander.XForms"
+             x:Class="AccordionXamarin.MainPage">
+    <ContentPage.BindingContext>
+        <local:ViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Behaviors>
+        <local:BehaviorClass/>
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <Grid x:Name="mainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="HideOrShow" Text="Hide / Show item" />
+            <syncfusion:SfAccordion x:Name="Accordion" Grid.Row="1" ExpandMode="MultipleOrNone" BindableLayout.ItemsSource="{Binding ContactsInfo}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <syncfusion:AccordionItem>
+                            <syncfusion:AccordionItem.Header>
+                                <Grid HeightRequest="50">
+                                    <Label Text="{Binding ContactName}"/>
+                                </Grid>
+                            </syncfusion:AccordionItem.Header>
+                            <syncfusion:AccordionItem.Content>
+                                <Grid HeightRequest="50">
+                                    <Label BackgroundColor="White" Text="{Binding CallTime}"/>
+                                </Grid>
+                            </syncfusion:AccordionItem.Content>
+                        </syncfusion:AccordionItem>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </syncfusion:SfAccordion>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
