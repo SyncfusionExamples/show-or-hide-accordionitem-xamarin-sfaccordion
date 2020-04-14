@@ -40,3 +40,6 @@ public class BehaviorClass : Behavior<ContentPage>
     }
 }
 ```
+**Outut**
+
+![ShowOrHide](https://github.com/SyncfusionExamples/show-or-hide-accordionitem-xamarin-sfaccordion/blob/master/ScreenShots/ShowOrHide.gif)
